@@ -1,0 +1,75 @@
+/**
+ * PlayerList Component Styles
+ */
+
+.player-list {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.player-list__title {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.player-list__items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.player-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+}
+
+.player-list__item--current {
+  border: 1px solid var(--color-accent);
+}
+
+.player-list__color {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.player-list__name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.player-list__badge {
+  font-size: var(--font-size-sm);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.player-list__badge--host {
+  background-color: var(--color-warning);
+  color: black;
+}
+
+.player-list__badge--you {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.player-list__status {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.player-list__status--ready {
+  color: var(--color-success);
+}

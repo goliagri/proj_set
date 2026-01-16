@@ -1,0 +1,60 @@
+/**
+ * ChatBox Component Styles
+ */
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 300px;
+}
+
+.chat-box__messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.chat-box__empty {
+  color: var(--color-text-secondary);
+  font-style: italic;
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+.chat-box__message {
+  display: flex;
+  gap: var(--spacing-sm);
+  word-break: break-word;
+}
+
+.chat-box__author {
+  font-weight: 500;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.chat-box__content {
+  color: var(--color-text-primary);
+}
+
+.chat-box__form {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: var(--color-bg-card);
+  border-top: 1px solid var(--color-bg-primary);
+}
+
+.chat-box__input {
+  flex: 1;
+}
+
+.chat-box__send {
+  padding: var(--spacing-sm) var(--spacing-md);
+}

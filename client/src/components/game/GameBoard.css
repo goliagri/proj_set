@@ -1,0 +1,66 @@
+/**
+ * GameBoard Component Styles
+ */
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+.deck-counter {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  padding-left: var(--spacing-sm);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: var(--spacing-xl);
+}
+
+.card-slot--empty {
+  width: 120px;
+  height: 160px;
+  border: 2px dashed var(--color-text-secondary);
+  border-radius: var(--radius-lg);
+  opacity: 0.3;
+}
+
+.confirm-set-btn {
+  padding: var(--spacing-md) var(--spacing-2xl);
+  font-size: var(--font-size-lg);
+}
+
+/* Game header - minimal styling */
+.game-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-sm);
+}
+
+/* Discrete back button */
+.game-header .btn-secondary {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  opacity: 0.7;
+}
+
+.game-header .btn-secondary:hover {
+  opacity: 1;
+  background: transparent;
+}
+
+.game-stats {
+  display: flex;
+  gap: var(--spacing-lg);
+}

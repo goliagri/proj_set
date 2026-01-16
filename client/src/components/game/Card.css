@@ -1,0 +1,115 @@
+/**
+ * Card Component Styles
+ */
+
+.card {
+  --card-width: 140px;
+  --card-height: 190px;
+  --dot-size: 34px;
+
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Larger cards on large monitors - dots scale with card */
+@media (min-width: 1400px) {
+  .card {
+    --card-width: 180px;
+    --card-height: 245px;
+    --dot-size: 44px;
+  }
+
+  .card__binary {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (min-width: 1800px) {
+  .card {
+    --card-width: 200px;
+    --card-height: 270px;
+    --dot-size: 52px;
+  }
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:focus {
+  outline: none;
+}
+
+/* Selection states - grey background, no outline, instant */
+.card--selected {
+  background-color: #9ca3af;
+}
+
+.card--pending {
+  background-color: #9ca3af;
+}
+
+/* Player indicator */
+.card__player-indicator {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+}
+
+/* Card content */
+.card__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+/* Dots layout (2x3 grid) */
+.card__dots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  width: 100%;
+  height: 100%;
+}
+
+.card__dot-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: var(--radius-full);
+}
+
+/* Binary mode */
+.card__binary {
+  font-family: monospace;
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-bg-primary);
+  letter-spacing: 2px;
+}

@@ -18,7 +18,7 @@ Users who go to the site will find a main menu with the following options:
 
 * **Single player game:** Navigates the user to a settings menu for configuring a single-player game. That menu has a "play" button that initiates the game.
 * **Multiplayer game:** Navigates the user to a settings menu for configuring a multiplayer game. That menu has a "create lobby" and a "join lobby" button.
-* **About:** Navigates the user to a page that explains the game and its rules. It has a thorough textual description of the rules, as well as some examples/counterexamples of sets. It also has a "back" button to return to the main menu.
+* **About:** Navigates the user to a page that explains the game and its rules. It has a thorough textual description of the rules, as well as some examples/counterexamples of sets. It should mention the mathematical property that with 7 cards dealt, there is always at least one valid set (a theorem from projective geometry related to the Fano plane). It also has a "back" button to return to the main menu.
 
 #### Single Player Settings Menu
 
@@ -44,7 +44,9 @@ A very basic menu with the following options:
 
 ### Multiplayer Lobby screen
 
-A shared screen visible to all players in the lobby. It contains a series of setting options similar to the single player menu.
+A shared screen visible to all players in the lobby. It contains a series of setting options similar to the single player menu, plus:
+
+- Scoring Mode: default mode - 'cards'. In 'cards' mode, players score points equal to the number of cards in each set they claim. In 'sets' mode, each valid set is worth 1 point regardless of size.
 
 It also contains
 - A ready button, which when clicked, marks the player as ready.
@@ -62,7 +64,7 @@ A screen where the user plays the game. It contains the game board, the turn tim
 The game board contains the following elements:
 - The deck: a stack of cards that will automatically be dealt on the table. It visually displays a card back, and when the user mouses over it displays the number of cards left in the deck.
 - The player's discard pile: A stack of cards that are in sets the player has found. It visually displays the top card of the pile, and when the user mouses over it displays the number of cards in the pile.
-- The active cards: The cards that are currently being played. They are displayed in a grid layout displayed face up. The user can click on a card to select it, and click again to deselect it. When a card is selected it has a slight yellow gradiant around its perimiter. 
+- The active cards: The cards that are currently being played. They are displayed in a 2x4 grid layout (with one empty slot) displayed face up. The user can click on a card to select it, and click again to deselect it. When a card is selected it has a slight yellow gradiant around its perimiter. 
 
 Functionality: Ever time the user selects/deselects a card, the group of selected cards are evaluated for if they are a set, if so then the cards are removed from the active cards and added to the player's discard pile. Then new cards are dealt from the deck. If not nothing happens. At the start of the game a full set of active cards are dealt from the deck. When the deck and the active cards are empty the game ends. The player is then navigated to the game over screen.
 
@@ -72,7 +74,7 @@ If timers are activated, then they are also displayed and updated accordingly. A
 ### Multi Player Game screen
 
 The multi player game screen is similar to the single player game screen, but with the following differences:
-- Multiple players are all selecting cards and claiming sets at the same time.
+- Multiple players are all selecting cards and claiming sets simultaneously (no turns). When a player completes a valid set, they claim it immediately—the first player to form a valid selection wins those cards. In 'take after click' mode, the first player to form a valid selection AND confirm it claims the set. Other players' selections on those cards are cleared.
 - There is a chat box at the bottom of the screen where players can type messages to each other. The chat box displays messages from all players in the game (this is the same chat box as in the lobby)
 - There is a scoreboard on the right side of the screen that displays the score of each player in the game. The score is the number of sets the player has gotten.
 - Each player has a color associated with them, when they have a card selected, the card is highlighted with their color, and also above the top right of the card is a small 'px' icon with their color (where x is their player number). If multiple players select the same card, the one who selected it last has their color shown. When a player claims a set, and take on click mode is enabled the cards are highlighted more intensely with their color (instead of the green from single player). 

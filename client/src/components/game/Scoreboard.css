@@ -1,0 +1,55 @@
+/**
+ * Scoreboard Component Styles
+ */
+
+.scoreboard {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  min-width: 200px;
+}
+
+.scoreboard__title {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  text-transform: uppercase;
+}
+
+.scoreboard__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.scoreboard__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+}
+
+.scoreboard__color {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.scoreboard__name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scoreboard__score {
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+  min-width: 40px;
+  text-align: right;
+}

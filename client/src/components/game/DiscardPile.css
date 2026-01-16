@@ -1,0 +1,89 @@
+/**
+ * DiscardPile Component Styles
+ */
+
+.discard-pile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.discard-pile__label {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
+.discard-pile__prefix {
+  font-weight: bold;
+  margin-right: var(--spacing-sm);
+}
+
+.discard-pile__stack {
+  position: relative;
+}
+
+/* Shadow cards to show pile depth */
+.discard-pile__shadow {
+  position: absolute;
+  width: var(--card-width, 140px);
+  height: var(--card-height, 190px);
+  background-color: #e5e7eb;
+  border-radius: var(--radius-lg);
+  top: 4px;
+  left: 4px;
+}
+
+.discard-pile__shadow--deep {
+  top: 8px;
+  left: 8px;
+  background-color: #d1d5db;
+}
+
+.discard-pile__empty {
+  width: var(--card-width, 140px);
+  height: var(--card-height, 190px);
+  border: 2px dashed var(--color-text-secondary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+/* Disable hover/click effects on discard pile cards */
+.discard-pile .card {
+  cursor: default;
+  position: relative;
+  z-index: 1;
+}
+
+.discard-pile .card:hover {
+  transform: none;
+}
+
+/* Responsive sizing */
+@media (min-width: 1400px) {
+  .discard-pile__shadow {
+    width: 180px;
+    height: 245px;
+  }
+
+  .discard-pile__empty {
+    width: 180px;
+    height: 245px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .discard-pile__shadow {
+    width: 200px;
+    height: 270px;
+  }
+
+  .discard-pile__empty {
+    width: 200px;
+    height: 270px;
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "projective-set",
+  "version": "0.1.0",
+  "description": "Projective Set card game with online multiplayer",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run build:shared && concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:shared": "npm run build --workspace=shared",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:run": "npm run build:shared && npm run test:run --workspace=shared && npm run test:run --workspace=server && npm run test:run --workspace=client",
+    "test:shared": "npm run test --workspace=shared",
+    "test:server": "npm run test --workspace=server",
+    "test:client": "npm run test --workspace=client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

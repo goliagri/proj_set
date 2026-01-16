@@ -1,0 +1,16 @@
+{
+  "name": "@projective-set/shared",
+  "version": "0.1.0",
+  "description": "Shared game logic and types for Projective Set",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^1.2.0"
+  }
+}
